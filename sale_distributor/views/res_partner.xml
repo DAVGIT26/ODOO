@@ -1,0 +1,45 @@
+<odoo>
+    <data>
+        <record id="res_partner_inherit" model="ir.ui.view">
+            <field name="name">res.partner.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <field name="category_id" position="after">
+                    <field name="contact_1"/>
+                    <field name="contact_2"/>
+                    <field name="terms_code"/>
+                    <field name="type_of_partner"/>
+                </field>
+                <page name="internal_notes" position="after">
+                    <page string="Vendor Information">
+                        <group>
+                            <field name="vendor_code"/>
+                            <field name="ap_vendor_number"/>
+                        </group>
+                    </page>
+                    <page string="Customer Information">
+                        <group>
+                            <group>
+                                <field name="customer_code"/>
+                                <field name="tax_exempt_number"/>
+                                <field name="fax"/>
+                                <field name="comment"/>
+                                <field name="ship_via_code"/>
+                                <field name="first_sale_date"/>
+                                <field name="last_sale_date"/>
+                            </group>
+                            <group>
+                                <field name="credit_holding_flag"/>
+                                <field name="credit_rating"/>
+                                <field name="main_account"/>
+                                <field name="sub_account"/>
+                                <field name="balance"/>
+                            </group>
+                        </group>
+                    </page>
+                </page>
+            </field>
+        </record>
+    </data>
+</odoo>
