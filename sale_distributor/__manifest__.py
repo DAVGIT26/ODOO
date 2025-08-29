@@ -12,8 +12,11 @@
     'website': 'www.acespritech.com',
     'depends': ['sale_management', 'purchase', 'account'],
     'data': [
+        # 'views/delivery_carrier.xml',
+        'views/account_payment_term.xml',
+        'data/data.xml',
         'views/res_partner.xml',
-        # 'views/account_tax.xml',
+        'views/account_tax.xml',
     ],
     'installable': True,
     'application': True,

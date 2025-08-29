@@ -10,6 +10,7 @@
                     <field name="contact_2"/>
                     <field name="terms_code"/>
                     <field name="type_of_partner"/>
+                    <field name="tax_code"/>
                 </field>
                 <page name="internal_notes" position="after">
                     <page string="Vendor Information">
@@ -21,8 +22,9 @@
                     <page string="Customer Information">
                         <group>
                             <group>
-                                <field name="customer_code"/>
+                                <field name="customer_number"/>
                                 <field name="tax_exempt_number"/>
+                                <field name="ship_to_number"/>
                                 <field name="fax"/>
                                 <field name="comment"/>
                                 <field name="ship_via_code"/>

@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Load the product for shipping method-->
+        <record id="product_best_way" model="product.product">
+            <field name="name">Best Way</field>
+            <field name="detailed_type">service</field>
+            <field name="sale_ok">False</field>
+            <field name="purchase_ok">False</field>
+        </record>
+
+        <record id="product_customer_pickup" model="product.product">
+            <field name="name">Customer Pickup</field>
+            <field name="detailed_type">service</field>
+            <field name="sale_ok">False</field>
+            <field name="purchase_ok">False</field>
+        </record>
+
+        <record id="product_delivery" model="product.product">
+            <field name="name">Delivery</field>
+            <field name="detailed_type">service</field>
+            <field name="sale_ok">False</field>
+            <field name="purchase_ok">False</field>
+        </record>
+
+        <record id="product_email_delivery" model="product.product">
+            <field name="name">Email Delivery</field>
+            <field name="detailed_type">service</field>
+            <field name="sale_ok">False</field>
+            <field name="purchase_ok">False</field>
+        </record>
+
+        <record id="product_fedex_next_day" model="product.product">
+            <field name="name">FedEx Next Day</field>
+            <field name="detailed_type">service</field>
+            <field name="sale_ok">False</field>
+            <field name="purchase_ok">False</field>
+        </record>
+
+        <record id="product_fedex_next_day_standard" model="product.product">
+            <field name="name">FedEx Next Day Standard</field>
+            <field name="detailed_type">service</field>
+            <field name="sale_ok">False</field>
+            <field name="purchase_ok">False</field>
+        </record>
+
+        <record id="product_fedex_priority" model="product.product">
+            <field name="name">FedEx Priority</field>
+            <field name="detailed_type">service</field>
+            <field name="sale_ok">False</field>
+            <field name="purchase_ok">False</field>
+        </record>
+
+        <record id="product_fedex_standard" model="product.product">
+            <field name="name">FedEx Standard</field>
+            <field name="detailed_type">service</field>
+            <field name="sale_ok">False</field>
+            <field name="purchase_ok">False</field>
+        </record>
+
+        <record id="product_fedex_2nd_edition" model="product.product">
+            <field name="name">FedEx 2nd Econ</field>
+            <field name="detailed_type">service</field>
+            <field name="sale_ok">False</field>
+            <field name="purchase_ok">False</field>
+        </record>
+
+        <record id="product_fedex_ground" model="product.product">
+            <field name="name">FedEx Ground</field>
+            <field name="detailed_type">service</field>
+            <field name="sale_ok">False</field>
+            <field name="purchase_ok">False</field>
+        </record>
+
+        <record id="product_uspo_overnight" model="product.product">
+            <field name="name">USPO Overnight</field>
+            <field name="detailed_type">service</field>
+            <field name="sale_ok">False</field>
+            <field name="purchase_ok">False</field>
+        </record>
+
+        <record id="product_uspo_2_day_service" model="product.product">
+            <field name="name">USPO 2 Day Services</field>
+            <field name="detailed_type">service</field>
+            <field name="sale_ok">False</field>
+            <field name="purchase_ok">False</field>
+        </record>
+
+        <record id="product_uspo_1st_class" model="product.product">
+            <field name="name">USPO 1St Class</field>
+            <field name="detailed_type">service</field>
+            <field name="sale_ok">False</field>
+            <field name="purchase_ok">False</field>
+        </record>
+
+        <record id="product_uspo_parcelpost" model="product.product">
+            <field name="name">USPO Parcelpost</field>
+            <field name="detailed_type">service</field>
+            <field name="sale_ok">False</field>
+            <field name="purchase_ok">False</field>
+        </record>
+
+        <record id="product_truck" model="product.product">
+            <field name="name">Truck</field>
+            <field name="detailed_type">service</field>
+            <field name="sale_ok">False</field>
+            <field name="purchase_ok">False</field>
+        </record>
+
+        <record id="product_ups_nxt_day_air" model="product.product">
+            <field name="name">UPS Nxt Day Air</field>
+            <field name="detailed_type">service</field>
+            <field name="sale_ok">False</field>
+            <field name="purchase_ok">False</field>
+        </record>
+
+        <record id="product_ups_2nd_day_air" model="product.product">
+            <field name="name">UPS 2Nd Day Air</field>
+            <field name="detailed_type">service</field>
+            <field name="sale_ok">False</field>
+            <field name="purchase_ok">False</field>
+        </record>
+
+        <record id="product_ups_ground" model="product.product">
+            <field name="name">UPS Ground</field>
+            <field name="detailed_type">service</field>
+            <field name="sale_ok">False</field>
+            <field name="purchase_ok">False</field>
+        </record>
+
+        <record id="product_ups_3rd_day" model="product.product">
+            <field name="name">UPS 3rd Day</field>
+            <field name="detailed_type">service</field>
+            <field name="sale_ok">False</field>
+            <field name="purchase_ok">False</field>
+        </record>
+
+        <record id="product_ups_ground_track" model="product.product">
+            <field name="name">UPS Ground Track</field>
+            <field name="detailed_type">service</field>
+            <field name="sale_ok">False</field>
+            <field name="purchase_ok">False</field>
+        </record>
+
+        <!-- Shipping Methods -->
+
+        <record id="shipping_method_bwy" model="delivery.carrier">
+            <field name="name">BWY</field>
+            <field name="product_id" ref="product_best_way"/>
+        </record>
+
+        <record id="shipping_method_cpu" model="delivery.carrier">
+            <field name="name">CPU</field>
+            <field name="product_id" ref="product_customer_pickup"/>
+        </record>
+
+        <record id="shipping_method_del" model="delivery.carrier">
+            <field name="name">DEL</field>
+            <field name="product_id" ref="product_delivery"/>
+        </record>
+
+        <record id="shipping_method_eml" model="delivery.carrier">
+            <field name="name">EML</field>
+            <field name="product_id" ref="product_email_delivery"/>
+        </record>
+
+        <record id="shipping_method_fe1" model="delivery.carrier">
+            <field name="name">FE1</field>
+            <field name="product_id" ref="product_fedex_next_day"/>
+        </record>
+
+        <record id="shipping_method_fe2" model="delivery.carrier">
+            <field name="name">FE2</field>
+            <field name="product_id" ref="product_fedex_next_day_standard"/>
+        </record>
+
+        <record id="shipping_method_fx0" model="delivery.carrier">
+            <field name="name">FX0</field>
+            <field name="product_id" ref="product_fedex_priority"/>
+        </record>
+
+        <record id="shipping_method_fx1" model="delivery.carrier">
+            <field name="name">FX1</field>
+            <field name="product_id" ref="product_fedex_standard"/>
+        </record>
+
+        <record id="shipping_method_fx2" model="delivery.carrier">
+            <field name="name">FX2</field>
+            <field name="product_id" ref="product_fedex_2nd_edition"/>
+        </record>
+
+        <record id="shipping_method_fx3" model="delivery.carrier">
+            <field name="name">FX3</field>
+            <field name="product_id" ref="product_fedex_ground"/>
+        </record>
+
+        <record id="shipping_method_ps1" model="delivery.carrier">
+            <field name="name">PS1</field>
+            <field name="product_id" ref="product_uspo_overnight"/>
+        </record>
+
+        <record id="shipping_method_ps2" model="delivery.carrier">
+            <field name="name">PS2</field>
+            <field name="product_id" ref="product_uspo_2_day_service"/>
+        </record>
+
+        <record id="shipping_method_ps3" model="delivery.carrier">
+            <field name="name">PS3</field>
+            <field name="product_id" ref="product_uspo_1st_class"/>
+        </record>
+
+        <record id="shipping_method_ps4" model="delivery.carrier">
+            <field name="name">PS4</field>
+            <field name="product_id" ref="product_uspo_parcelpost"/>
+        </record>
+
+        <record id="shipping_method_truck" model="delivery.carrier">
+            <field name="name">TRK</field>
+            <field name="product_id" ref="product_truck"/>
+        </record>
+
+        <record id="shipping_method_up1" model="delivery.carrier">
+            <field name="name">UP1</field>
+            <field name="product_id" ref="product_ups_nxt_day_air"/>
+        </record>
+
+        <record id="shipping_method_up2" model="delivery.carrier">
+            <field name="name">UP2</field>
+            <field name="product_id" ref="product_ups_2nd_day_air"/>
+        </record>
+
+        <record id="shipping_method_up3" model="delivery.carrier">
+            <field name="name">UP3</field>
+            <field name="product_id" ref="product_ups_ground"/>
+        </record>
+
+        <record id="shipping_method_up4" model="delivery.carrier">
+            <field name="name">UP4</field>
+            <field name="product_id" ref="product_ups_3rd_day"/>
+        </record>
+
+        <record id="shipping_method_up5" model="delivery.carrier">
+            <field name="name">UP5</field>
+            <field name="product_id" ref="product_ups_ground_track"/>
+        </record>
+
+
+
+        <!-- <record id="shipping_method_bwy" model="delivery.carrier">
+            <field name="name">Best Way</field>
+            <field name="product_id" ref="product_best_way"/>
+            <field name="code">BWY</field>
+        </record>
+
+        <record id="shipping_method_cpu" model="delivery.carrier">
+            <field name="name">Customer Pickup</field>
+            <field name="product_id" ref="product_customer_pickup"/>
+            <field name="code">CPU</field>
+        </record>
+
+       <record id="shipping_method_del" model="delivery.carrier">
+            <field name="name">Delivery</field>
+            <field name="product_id" ref="product_delivery"/>
+            <field name="code">DEL</field>
+        </record>
+
+
+        <record id="shipping_method_eml" model="delivery.carrier">
+            <field name="name">Email Delivery</field>
+            <field name="product_id" ref="product_email_delivery"/>
+            <field name="code">EML</field>
+        </record>
+
+        <record id="shipping_method_fe1" model="delivery.carrier">
+            <field name="name">FedEx Next Day</field>
+            <field name="product_id" ref="product_fedex_next_day"/>
+            <field name="code">FE1</field>
+        </record>
+
+        <record id="shipping_method_fe2" model="delivery.carrier">
+            <field name="name">FedEx Next Day Standard</field>
+            <field name="product_id" ref="product_fedex_next_day_standard"/>
+            <field name="code">FE2</field>
+        </record>
+
+        <record id="shipping_method_fx0" model="delivery.carrier">
+            <field name="name">FedEx Priority</field>
+            <field name="product_id" ref="product_fedex_priority"/>
+            <field name="code">FX0</field>
+        </record>
+
+        <record id="shipping_method_fx1" model="delivery.carrier">
+            <field name="name">FedEx Standard</field>
+            <field name="product_id" ref="product_fedex_standard"/>
+            <field name="code">FX1</field>
+        </record>
+
+        <record id="shipping_method_fx2" model="delivery.carrier">
+            <field name="name">FedEx 2nd Econ</field>
+            <field name="product_id" ref="product_fedex_2nd_edition"/>
+            <field name="code">FX2</field>
+        </record>
+
+        <record id="shipping_method_fx3" model="delivery.carrier">
+            <field name="name">FedEx Ground</field>
+            <field name="product_id" ref="product_fedex_ground"/>
+            <field name="code">FX3</field>
+        </record>
+
+        <record id="shipping_method_ps1" model="delivery.carrier">
+            <field name="name">USPO Overnight</field>
+            <field name="product_id" ref="product_uspo_overnight"/>
+            <field name="code">PS1</field>
+        </record>
+
+        <record id="shipping_method_ps2" model="delivery.carrier">
+            <field name="name">USPO 2 Day Services</field>
+            <field name="product_id" ref="product_uspo_2_day_service"/>
+            <field name="code">PS2</field>
+        </record>
+
+        <record id="shipping_method_ps3" model="delivery.carrier">
+            <field name="name">USPO 1St Class</field>
+            <field name="product_id" ref="product_uspo_1st_class"/>
+            <field name="code">PS3</field>
+        </record>
+
+        <record id="shipping_method_ps4" model="delivery.carrier">
+            <field name="name">USPO Parcelpost</field>
+            <field name="product_id" ref="product_uspo_parcelpost"/>
+            <field name="code">PS4</field>
+        </record>
+
+        <record id="shipping_method_truck" model="delivery.carrier">
+            <field name="name">Truck</field>
+            <field name="product_id" ref="product_truck"/>
+            <field name="code">TRK</field>
+        </record>
+
+        <record id="shipping_method_up1" model="delivery.carrier">
+            <field name="name">UPS Nxt Day Air</field>
+            <field name="product_id" ref="product_ups_nxt_day_air"/>
+            <field name="code">UP1</field>
+        </record>
+
+        <record id="shipping_method_up2" model="delivery.carrier">
+            <field name="name">UPS 2Nd Day Air</field>
+            <field name="product_id" ref="product_ups_2nd_day_air"/>
+            <field name="code">UP2</field>
+        </record>
+
+        <record id="shipping_method_up3" model="delivery.carrier">
+            <field name="name">UPS Ground</field>
+            <field name="product_id" ref="product_ups_ground"/>
+            <field name="code">UP3</field>
+        </record>
+
+        <record id="shipping_method_up4" model="delivery.carrier">
+            <field name="name">UPS 3rd Day</field>
+            <field name="product_id" ref="product_ups_3rd_day"/>
+            <field name="code">UP4</field>
+        </record>
+
+        <record id="shipping_method_up5" model="delivery.carrier">
+            <field name="name">UPS Ground Track</field>
+            <field name="product_id" ref="product_ups_ground_track"/>
+            <field name="code">UP5</field>
+        </record> -->
+
+
+        <!--partner category-->
+        <record id="category_enterprise" model="res.partner.category">
+            <field name="name">Enterprise</field>
+        </record>
+
+        <record id="category_corporate" model="res.partner.category">
+            <field name="name">Corporate</field>
+        </record>
+
+        <record id="category_ecommerce" model="res.partner.category">
+            <field name="name">E-Commerce</field>
+        </record>
+
+        <record id="category_educational" model="res.partner.category">
+            <field name="name">Educational</field>
+        </record>
+
+        <record id="category_end_user" model="res.partner.category">
+            <field name="name">End User</field>
+        </record>
+
+        <record id="category_government" model="res.partner.category">
+            <field name="name">Government</field>
+        </record>
+
+        <record id="category_retail" model="res.partner.category">
+            <field name="name">Retail</field>
+        </record>
+
+        <record id="category_whole_sale" model="res.partner.category">
+            <field name="name">Whole Sale</field>
+        </record>
+
+
+        <record id="category_2l" model="res.partner.category">
+            <field name="name">2L</field>
+            <field name="parent_id" ref="category_enterprise"/>
+        </record>
+
+        <record id="category_cq" model="res.partner.category">
+            <field name="name">CQ</field>
+            <field name="parent_id" ref="category_corporate"/>
+        </record>
+
+        <record id="category_ecomm" model="res.partner.category">
+            <field name="name">ECOMM</field>
+            <field name="parent_id" ref="category_ecommerce"/>
+        </record>
+
+        <record id="category_edu" model="res.partner.category">
+            <field name="name">EDU</field>
+            <field name="parent_id" ref="category_educational"/>
+        </record>
+
+        <record id="category_en" model="res.partner.category">
+            <field name="name">EN</field>
+            <field name="parent_id" ref="category_end_user"/>
+        </record>
+
+        <record id="category_qw" model="res.partner.category">
+            <field name="name">QW</field>
+            <field name="parent_id" ref="category_government"/>
+        </record>
+
+        <record id="category_rtl" model="res.partner.category">
+            <field name="name">RTL</field>
+            <field name="parent_id" ref="category_retail"/>
+        </record>
+
+        <record id="category_whl" model="res.partner.category">
+            <field name="name">WHL</field>
+            <field name="parent_id" ref="category_whole_sale"/>
+        </record>
+
+
+
+        <!-- Payment terms -->
+
+        <record id="payment_2n1" model="account.payment.term">
+            <field name="name">2.5% Net 15</field>
+            <field name="discount_days">15</field>
+            <field name="discount_percentage">2.5</field>
+            <field name="code">2N1</field>
+        </record>
+
+        <record id="payment_2n3" model="account.payment.term">
+            <field name="name">2% Net 30</field>
+            <field name="discount_days">30</field>
+            <field name="discount_percentage">2</field>
+            <field name="code">2N3</field>
+        </record>
+
+        <record id="payment_co2" model="account.payment.term">
+            <field name="name">Cod Company Ck</field>
+            <field name="discount_days">0</field>
+            <field name="discount_percentage">0</field>
+            <field name="code">C02</field>
+        </record>
+
+        <record id="payment_cc" model="account.payment.term">
+            <field name="name">Credit Card</field>
+            <field name="discount_days">0</field>
+            <field name="discount_percentage">0</field>
+            <field name="code">CC</field>
+        </record>
+
+        <record id="payment_cck" model="account.payment.term">
+            <field name="name">Cashier Check</field>
+            <field name="discount_days">0</field>
+            <field name="discount_percentage">0</field>
+            <field name="code">CCK</field>
+        </record>
+
+        <record id="payment_chk" model="account.payment.term">
+            <field name="name">Check</field>
+            <field name="discount_days">0</field>
+            <field name="discount_percentage">0</field>
+            <field name="code">CHK</field>
+        </record>
+
+        <record id="payment_n07" model="account.payment.term">
+            <field name="name">Net 7 Days</field>
+            <field name="discount_days">7</field>
+            <field name="discount_percentage">0</field>
+            <field name="code">N07</field>
+        </record>
+
+        <record id="payment_n15" model="account.payment.term">
+            <field name="name">Net 15 Days</field>
+            <field name="discount_days">15</field>
+            <field name="discount_percentage">0</field>
+            <field name="code">N15</field>
+        </record>
+
+        <record id="payment_n25" model="account.payment.term">
+            <field name="name">Net 25 Days</field>
+            <field name="discount_days">25</field>
+            <field name="discount_percentage">0</field>
+            <field name="code">N25</field>
+        </record>
+
+        <record id="payment_n30" model="account.payment.term">
+            <field name="name">Net 30 Days</field>
+            <field name="discount_days">30</field>
+            <field name="discount_percentage">0</field>
+            <field name="code">N30</field>
+        </record>
+
+        <record id="payment_n45" model="account.payment.term">
+            <field name="name">Net 45 Days</field>
+            <field name="discount_days">45</field>
+            <field name="discount_percentage">0</field>
+            <field name="code">N45</field>
+        </record>
+
+        <record id="payment_n60" model="account.payment.term">
+            <field name="name">Net 60 Days</field>
+            <field name="discount_days">60</field>
+            <field name="discount_percentage">0</field>
+            <field name="code">N60</field>
+        </record>
+
+        <record id="payment_urt" model="account.payment.term">
+            <field name="name">Upon Reciept</field>
+            <field name="discount_days">0</field>
+            <field name="discount_percentage">0</field>
+            <field name="code">URT</field>
+        </record>
+
+        <record id="payment_wt" model="account.payment.term">
+            <field name="name">Wire Transfer</field>
+            <field name="discount_days">0</field>
+            <field name="discount_percentage">0</field>
+            <field name="code">WT</field>
+        </record>
+
+
+
+    </data>
+
+</odoo>

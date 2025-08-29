@@ -16,9 +16,11 @@ class ResPartner(models.Model):
     ap_vendor_number = fields.Char("AP Vendor Number")
 
     # Customer data fields
-    customer_code = fields.Char("Customer Code")
+    customer_number = fields.Char("Customer Number")
     tax_exempt_number = fields.Char("Tax Exempt Number")
-    ship_via_code = fields.Char("Ship Via Code")
+    ship_to_number = fields.Char("Ship To Number")
+    ship_via_code = fields.Many2one(comodel_name='delivery.carrier', string='Ship Code')
+    tax_code = fields.Char(comodel_name='account.tax', string='Tax Code')
     first_sale_date = fields.Date("First Sale Date")
     last_sale_date = fields.Date("Last Sale Date")
     credit_holding_flag = fields.Boolean("Credit Holding Flag")
