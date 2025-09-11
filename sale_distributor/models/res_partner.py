@@ -1,9 +1,11 @@
+# -*- coding: utf-8 -*-
 from odoo import models, fields
 
 
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
+    type = fields.Selection(selection_add=[('a', 'A'),('b', 'B'),('c', 'C')])
     contact_1 = fields.Char("Contact 1")
     contact_2 = fields.Char("Contact 2")
     terms_code = fields.Char("Terms Code")

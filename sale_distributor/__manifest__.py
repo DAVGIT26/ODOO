@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 {
     'name': 'Sale Distributor Integration',
     'version': '17.0.1.0.0',
@@ -10,13 +11,14 @@
     'category': 'Sales',
     'author': 'Acespritech Solutions Pvt. Ltd.',
     'website': 'www.acespritech.com',
-    'depends': ['sale_management', 'purchase', 'account'],
+    'depends': ['sale_management', 'purchase', 'account','delivery'],
     'data': [
-        # 'views/delivery_carrier.xml',
+        'security/ir.model.access.csv',
         'views/account_payment_term.xml',
         'data/data.xml',
         'views/res_partner.xml',
         'views/account_tax.xml',
+        'wizard/partner_child_import.xml',
     ],
     'installable': True,
     'application': True,

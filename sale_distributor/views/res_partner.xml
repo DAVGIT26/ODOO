@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <data>
         <record id="res_partner_inherit" model="ir.ui.view">
@@ -41,6 +42,22 @@
                         </group>
                     </page>
                 </page>
+            </field>
+        </record>
+
+        <record id="view_partner_form_inherit_child_import" model="ir.ui.view">
+            <field name="name">res.partner.form.inherit.child.import</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet" position="before">
+                    <header>
+                      <button name="%(action_partner_child_import_wizard)d"
+                              type="action"
+                              string="Import Child Contacts"
+                              class="btn-primary"/>
+                    </header>
+                </xpath>
             </field>
         </record>
     </data>
